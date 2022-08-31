@@ -6,6 +6,7 @@ This small python library allows to manipulate Geojson files in order to import 
 The original Geojson files may for example have been created by importing data from OpenStreetMap (via https://overpass-turbo.eu) or in JOSM.
 
 Here is an example of what using this software can produce:
+
 <img alt="Example of resulting uMap layers" src="https://github.com/lus0rius/GeojsonToUMap/blob/main/Examples/Comparison.png?raw=true" width="500">
 
 ## Convert or merge Geojson files to MultiLineStrings
@@ -25,9 +26,9 @@ By calling this function multiple times, it is possible to merge multiple Geojso
 The convert_to_umap() function allows you to export a list of Geojson files into a uMap file, containing all the data of a uMap and importable on this site. Its arguments are all mandatory:
  - **layer_files**: *list of strings of text*. List containing all the files that you want to appear as layers in uMap.
  - **map_settings_file**: *string of text*. Path of the .umap file containing all the map settings. To obtain this file, you must have created the uMap (preferably empty) to which we will add the layers. Then, edit the file with a Notepad application and keep only the first 54 lines with map settings and map geometry (closing the file with a curly bracket at the end). It supports some keywords that you can write in the settings file:
-	 - <span>$TODAY$</span> is replaced by the current date in English.
-	 - <span>$TODAY!fr$</span> is replaced by the current date in French. It works for any language code.
-	 - <span>$YEAR\\$</span> is replaced by the current year (ex. 2022).
+	 - <span>$</span>TODAY<span>$</span> is replaced by the current date in English.
+	 - <span>$</span>TODAY!fr<span>$</span> is replaced by the current date in French. It works for any language code.
+	 - <span>$</span>YEAR<span>$</span> is replaced by the current year (ex. 2022).
  - **out_file**: *string of text*. Path of the output uMap file, absolute or relative to the location of the python file.
  
 ## Troubleshooting
