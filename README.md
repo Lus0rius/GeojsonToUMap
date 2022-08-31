@@ -5,8 +5,8 @@ This small python library allows to manipulate Geojson files in order to import 
 
 The original Geojson files may for example have been created by importing data from OpenStreetMap (via https://overpass-turbo.eu) or in JOSM.
 
-Here is an example of what using this software can do:
-[image]
+Here is an example of what using this software can produce:
+![Example of resulting uMap layers](https://github.com/lus0rius/GeojsonToUMap/blob/main/Examples/Comparison.png?raw=true)
 
 ## Convert or merge Geojson files to MultiLineStrings
 It is possible ton convert a single Geojson file to new file containing a single MultiLineString using the function merge_geojson(). Here are its arguments:
@@ -32,4 +32,6 @@ The convert_to_umap() function allows you to export a list of Geojson files into
  
 ## Troubleshooting
 As this library was mainly created for my own use, it is not free of bugs. Please feel free to report them. Common error messages:
+ - **FileNotFoundError**: The file input does not exist.
+ - **SyntaxError: (unicode error) 'unicodeescape'**: Make sure you use / and not \ in file paths.
  - **JSONDecodeError**: The Geojson file input does not conform to the Json syntax.
