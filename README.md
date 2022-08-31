@@ -25,7 +25,7 @@ By calling this function multiple times, it is possible to merge multiple Geojso
 ## Convert Geojson to uMap
 The convert_to_umap() function allows you to export a list of Geojson files into a uMap file, containing all the data of a uMap and importable on this site. Its arguments are all mandatory:
  - **layer_files**: *list of strings of text*. List containing all the files that you want to appear as layers in uMap.
- - **map_settings_file**: *string of text*. Path of the .umap file containing all the map settings. To obtain this file, you must have created the uMap (preferably empty) to which we will add the layers. Then, edit the file with a Notepad application and keep only the first 54 lines with map settings and map geometry (closing the file with a curly bracket at the end). It supports some keywords that you can write in the settings file:
+ - **map_settings_file**: *string of text*. Path of the .umap file containing all the map settings. To obtain this file, you must have created the uMap (preferably empty) to which we will add the layers. Then, edit the file with a Notepad application and keep only the first 54 lines with map settings and map geometry (closing the file with a curly bracket at the end, as in the *Examples* folder). It supports some keywords that you can write in the settings file:
 	 - <span>$</span>TODAY<span>$</span> is replaced by the current date in English.
 	 - <span>$</span>TODAY!fr<span>$</span> is replaced by the current date in French. It works for any language code.
 	 - <span>$</span>YEAR<span>$</span> is replaced by the current year (ex. 2022).
