@@ -10,7 +10,7 @@ Here is an example of what using this software can produce:
 <img alt="Example of resulting uMap layers" src="https://github.com/lus0rius/GeojsonToUMap/blob/main/Examples/Comparison.png?raw=true" width="500">
 
 ## Convert or merge Geojson files to MultiLineStrings
-It is possible ton convert a single Geojson file to new file containing a single MultiLineString using the function merge_geojson(). Here are its arguments:
+It is possible ton convert a single Geojson file to new file containing a single MultiLineString using the function **merge_geojson()**. Here are its arguments:
  - **in_file**: *string of text*. Path of the input Geojson file, absolute or relative to the location of the python file.
  - **out_file**: *string of text*. Path of the output Geojson file containing the MultiLineString.
  - Optional arguments:
@@ -20,10 +20,10 @@ It is possible ton convert a single Geojson file to new file containing a single
 	 - **rounding**: *integer number* (default 6). If the value is superior to 0, all the coordinates of LineString geometries (only LineString) will be rounded to the value of this argument after the decimal point.
 	 - **keys_order_file**: *string of text* Path of a file containing all possible property keys in order. This makes the order of the keys uniform if you use the "Table" layout when clicking on a layer in uMap.
 
-By calling this function multiple times, it is possible to merge multiple Geojson files in one single file containing multiple MultiLineStrings. If you want to merge an entire directory, you can use the directory_to_geojson() function.
+By calling this function multiple times, it is possible to merge multiple Geojson files in one single file containing multiple MultiLineStrings. If you want to merge an entire directory, you can use the **directory_to_geojson()** function.
 
 ## Convert Geojson to uMap
-The convert_to_umap() function allows you to export a list of Geojson files into a uMap file, containing all the data of a uMap and importable on this site. Its arguments are all mandatory:
+The **convert_to_umap()** function allows you to export a list of Geojson files into a uMap file, containing all the data of a uMap and importable on this site. Its arguments are all mandatory:
  - **layer_files**: *list of strings of text*. List containing all the files that you want to appear as layers in uMap.
  - **map_settings_file**: *string of text*. Path of the .umap file containing all the map settings. To obtain this file, you must have created the uMap (preferably empty) to which we will add the layers. Then, edit the file with a Notepad application and keep only the first 54 lines with map settings and map geometry (closing the file with a curly bracket at the end, as in the *Examples* folder). It supports some keywords that you can write in the settings file:
 	 - <span>$</span>TODAY<span>$</span> is replaced by the current date in English.
