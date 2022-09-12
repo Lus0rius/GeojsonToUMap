@@ -142,10 +142,12 @@ def merge_geojson(in_file: str, out_file: str,
             ordered_properties = OrderedDict()
             for line in order_file.readlines():
                 line_wo_lf = line[:-1]
-                if line[:-1] in properties.keys():
+                if line_wo_lf in properties.keys():
                     ordered_properties.update({line_wo_lf: properties[line_wo_lf]})
+                if line_wo_lf.lower() in properties.keys():
+                    ordered_properties.update({line_wo_lf: properties[line_wo_lf.lower()]})
             for prop in properties:
-                if prop not in ordered_properties.keys():
+                if prop not in ordered_properties.keys() and prop.capitalize() not in ordered_properties.keys():
                     ordered_properties.update({prop: properties[prop]})
             properties = ordered_properties
 
@@ -215,6 +217,7 @@ def directory_to_geojson(directory: str, output_file: str,
     tot = len(filelist)
 
     for file in filelist:
+        print(file)
         merge_geojson(file, output_file, False, is_umap_layer, indent, rounding, keys_order_file)
         c += 1
         print(f"{c}/{tot}")
